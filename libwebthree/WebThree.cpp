@@ -17,11 +17,11 @@
 
 #include "WebThree.h"
 
+#include <libethashseal/Ethash.h>
+#include <libethereum/Client.h>
+#include <libethereum/ClientTest.h>
 #include <libethereum/Defaults.h>
 #include <libethereum/EthereumHost.h>
-#include <libethereum/ClientTest.h>
-#include <libethashseal/EthashClient.h>
-#include <libethashseal/Ethash.h>
 
 #include <aleth/buildinfo.h>
 
@@ -53,10 +53,8 @@ WebThreeDirect::WebThreeDirect(std::string const& _clientVersion,
                 _params, (int)_params.networkID, m_net, shared_ptr<GasPricer>(), _dbPath, _we));
         else
         {
-            if (_params.sealEngineName == Ethash::name())
-                m_ethereum.reset(new eth::EthashClient(_params, (int)_params.networkID, m_net,
-                    shared_ptr<GasPricer>(), _dbPath, _snapshotPath, _we));
-            else if (_params.sealEngineName == NoProof::name())
+            if (_params.sealEngineName == Ethash::name() ||
+                _params.sealEngineName == NoProof::name())
                 m_ethereum.reset(new eth::Client(_params, (int)_params.networkID, m_net,
                     shared_ptr<GasPricer>(), _dbPath, _snapshotPath, _we));
             else
