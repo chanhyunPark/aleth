@@ -46,7 +46,7 @@ PROJECT_NUMBER         = PoC-8
 
 PROJECT_BRIEF          = "The C++ Implementation of Ethereum"
 
-# With the PROJECT_LOGO tag one can specify an logo or icon that is included in
+# With the PROJECT_LOGO tag one can specify a logo or icon that is included in
 # the documentation. The maximum height of the logo should not exceed 55 pixels
 # and the maximum width should not exceed 200 pixels. Doxygen will copy the logo
 # to the output directory.
@@ -1452,7 +1452,7 @@ FORMULA_FONTSIZE       = 10
 # supported properly for IE 6.0, but are supported on all modern browsers.
 #
 # Note that when changing this option you need to delete any form_*.png files in
-# the HTML output directory before the changes have effect.
+# the HTML output directory before the changes have an effect.
 # The default value is: YES.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
